@@ -777,11 +777,13 @@ public class ZooKeeperMasterModel implements MasterModel {
             // for exceptions thrown as part of a transaction.
             log.debug("error saving rolling-update operations: {}", e);
           } catch (KeeperException e) {
-            log.error("rolling-update on deployment-group {} failed", deploymentGroupName, e);
+            log.error("rolling-update on deployment-group failed: name={}, path={}",
+                      deploymentGroupName, e.getPath(), e);
           }
         }
       } catch (final Exception e) {
-        log.error("error processing rolling update step for {}", deploymentGroupName, e);
+        log.error("error processing rolling update step on deployment-group: name={}",
+                  deploymentGroupName, e);
       }
     }
   }
