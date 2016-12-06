@@ -253,6 +253,16 @@
         <artifactId>jsr305</artifactId>
         <version>2.0.3</version>
       </dependency>
+      <dependency>
+        <groupId>com.spotify</groupId>
+        <artifactId>client-tls</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.spotify</groupId>
+        <artifactId>client-https</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
 
       <!--test deps-->
       <dependency>

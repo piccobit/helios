@@ -20,6 +20,7 @@ package com.spotify.helios.client;
 import com.google.common.base.Joiner;
 import com.google.common.base.Throwables;
 
+import com.spotify.clienttlstools.https.HttpsHandler;
 import com.spotify.helios.common.HeliosException;
 import com.spotify.helios.common.Json;
 
@@ -146,8 +147,8 @@ public class DefaultHttpConnector implements HttpConnector {
   }
 
   private static void setRequestMethod(final HttpURLConnection connection,
-                                final String method,
-                                final boolean isHttps) {
+                                       final String method,
+                                       final boolean isHttps) {
     // Nasty workaround for ancient HttpURLConnection only supporting few methods
     final Class<?> httpURLConnectionClass = connection.getClass();
     try {
